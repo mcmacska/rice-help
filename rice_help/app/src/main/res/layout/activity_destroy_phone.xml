@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/app_main_theme"
+    tools:context=".destroy_phone">
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/app_main_text"
+        android:layout_width="163dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/destroy_phone"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/phone_to_destroy"
+        android:layout_width="233dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="132dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/demo_phone" />
+
+    <LinearLayout
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_to_destroy"
+        app:layout_constraintVertical_bias="0.792">
+
+        <Button
+            android:id="@+id/dastroy_btn"
+            style="@style/app_destroy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="destroy_phone_"
+            android:text="@string/destroy" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/app_main_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="cancel_"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

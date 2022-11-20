@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Rice help</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="countdown">00:00</string>
+    <string name="destroy_phone">Destroy phone?</string>
+    <string name="destroy_phone_btn">Destroy phone</string>
+    <string name="exit">Exit</string>
+    <string name="bowl_of_rice">Bowl of rice</string>
+    <string name="current_phone">Current phone:</string>
+    <string name="phone">Phone</string>
+    <string name="destroy">Destroy</string>
+    <string name="cancel">Cancel</string>
+    <string name="rice_bowl">Rice bowl</string>
+    <string name="rice_bowl_text">Rice Bowl</string>
+    <string name="back">Back</string>
+    <string name="put_phone_into_the_rice">Put phone into the rice</string>
+    <string name="phone_in_the_bowl_text">Phone is in the bowl</string>
+    <string name="phone_repaired_text">Phone repaired</string>
+</resources>
