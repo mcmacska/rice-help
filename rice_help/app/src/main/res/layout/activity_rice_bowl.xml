@@ -8,6 +8,18 @@
     tools:context=".rice_bowl">
 
     <TextView
+        android:id="@+id/game_completed2"
+        style="@style/app_main_text"
+        android:layout_width="130dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="640dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView4"
         style="@style/app_main_text"
         android:layout_width="166dp"
@@ -21,20 +33,19 @@
 
     <ImageView
         android:id="@+id/bowl"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="276dp"
+        android:layout_width="229dp"
+        android:layout_height="206dp"
+        android:layout_marginTop="244dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/bowl_of_rice" />
 
     <ImageView
         android:id="@+id/phone_destroyed"
-        android:layout_width="169dp"
-        android:layout_height="171dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="153dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -45,7 +56,7 @@
         style="@style/app_main_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="48dp"
         android:onClick="back"
         android:text="@string/back"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +69,7 @@
         style="@style/app_main_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="180dp"
         android:onClick="put_phone"
         android:text="@string/put_phone_into_the_rice"
         app:layout_constraintEnd_toEndOf="parent"

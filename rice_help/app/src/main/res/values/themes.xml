@@ -31,6 +31,11 @@
         <item name="android:textColor">@color/rice_help_background</item>
         <item name="android:backgroundTint">@color/rice_help_delete_button</item>
     </style>
+    <style name="app_winner_text_1">
+        <item name="android:textColor">@color/rice_help_winner</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
     android:gravity="center_horizontal|center_vertical"
 </resources>

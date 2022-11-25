@@ -16,4 +16,9 @@
     <string name="put_phone_into_the_rice">Put phone into the rice</string>
     <string name="phone_in_the_bowl_text">Phone is in the bowl</string>
     <string name="phone_repaired_text">Phone repaired</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_completed_the_game">You completed the game</string>
+    <string name="go_back_and_restart_the_game">Go back and restart the game</string>
+    <string name="game_completed">Game completed</string>
+    <string name="number_of_times">times</string>
 </resources>

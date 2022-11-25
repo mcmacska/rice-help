@@ -39,6 +39,12 @@ public class Main extends AppCompatActivity {
 
     private ImageView phone;
 
+    private TextView game_completed;
+
+    private int times_game_completed;
+
+    private String added_time;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,23 +59,13 @@ public class Main extends AppCompatActivity {
         rice_button = findViewById(R.id.rice_button);
 
         current_phone_text = findViewById(R.id.current_phone);
+
+        game_completed = findViewById(R.id.game_completed);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-//        sp_main = getSharedPreferences("rice_help_data", MODE_PRIVATE);
-//        current_phone_id = sp_main.getInt("current_phone_id", 1);
-//        is_destroyed = sp_main.getBoolean("destroyed", false);
-//
-//        Toast.makeText(this, current_phone_id + " " + is_destroyed, Toast.LENGTH_SHORT).show();
-//
-//        if (is_destroyed){
-//            set_phone_broken(current_phone_id);
-//        }else{
-//            set_phone(current_phone_id);
-//        }
     }
 
     @Override
@@ -80,14 +76,24 @@ public class Main extends AppCompatActivity {
         current_phone_id = sp_main.getInt("current_phone_id", 1);
         is_destroyed = sp_main.getBoolean("destroyed", false);
         is_in_rice = sp_main.getBoolean("is_in_rice", false);
+        times_game_completed = sp_main.getInt("times_game_completed", 0);
+        added_time = sp_main.getString("added_time", "");
+
 
         //is in rice?
         if (is_in_rice){
             //jump to bowl
+            empty_to_rice_bowl();
 
         }
 
-        Toast.makeText(this, current_phone_id + " " + is_destroyed, Toast.LENGTH_SHORT).show();
+
+        String game_first = getString(R.string.game_completed);
+        String game_second = getString(R.string.number_of_times);
+
+        String game_completed_content = game_first + " " + times_game_completed + " " + game_second;
+
+        game_completed.setText(game_completed_content);
 
         if (is_destroyed){
             set_phone_broken(current_phone_id);
@@ -137,7 +143,7 @@ public class Main extends AppCompatActivity {
             phone.setImageResource(R.drawable.demo_phone);
         }else if (phoneid_ > 11){
             //go to winner activity
-
+            to_winner();
 
         }else {
             System.out.println(phoneid_);
@@ -246,13 +252,24 @@ public class Main extends AppCompatActivity {
     public void to_rice_bowl(View v){
         Intent i = new Intent(Main.this, rice_bowl.class);
         i.putExtra("id", current_phone_id);
+        i.putExtra("times_game_completed", times_game_completed);
+        i.putExtra("in_bowl", false);
+        i.putExtra("added_time", "");
         startActivity(i);
     }
 
-    public void empty_to_rice_bowl(View v){
+    public void empty_to_rice_bowl(){
         Intent i = new Intent(Main.this, rice_bowl.class);
         i.putExtra("id", current_phone_id);
-//        i.putExtra("in", current_phone_id);
+        i.putExtra("times_game_completed", times_game_completed);
+        i.putExtra("in_bowl", true);
+        i.putExtra("added_time", added_time);
+        startActivity(i);
+    }
+
+    public void to_winner(){
+        Intent i = new Intent(Main.this, winner.class);
+        i.putExtra("times_game_completed", times_game_completed);
         startActivity(i);
     }
 }
