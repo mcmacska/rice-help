@@ -20,7 +20,7 @@ public class rice_bowl extends AppCompatActivity {
 
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 5000;
+    int delay = 2000;
 
     int time_for_rice_sec = 30;
 
@@ -50,7 +50,7 @@ public class rice_bowl extends AppCompatActivity {
 
     Boolean put_phone = false;
 
-    Boolean destroy_handler = false;
+    volatile Boolean destroy_handler = false;
 
     private String added_time = "";
 
@@ -207,16 +207,19 @@ public class rice_bowl extends AppCompatActivity {
     }
 
     public void put_phone(View v){
+
         bowl.setImageResource(R.drawable.bowl_of_rice_full);
         phone_destroyed.setImageResource(R.drawable.empty_phone);
 
         state.setText(R.string.phone_in_the_bowl_text);
+
 
         //get the current time
         Calendar current_Time = Calendar.getInstance();
         long timeInSecs = current_Time.getTimeInMillis();
         long added_time = (timeInSecs + (time_for_rice_sec * 1000L));
         current_Time_1_min = new Date(added_time);
+
 
         //save rice state
         sp_destroy = getSharedPreferences("rice_help_data", MODE_PRIVATE);
@@ -226,15 +229,18 @@ public class rice_bowl extends AppCompatActivity {
 
         editor.commit();
 
+
         //put phone into rice button
         put_phone_into_rice.setEnabled(false);
         put_phone_into_rice.setBackgroundColor(getResources().getColor(R.color.rice_help_text_color_faded));
         put_phone_into_rice.setTextColor(getResources().getColor(R.color.rice_help_background_faded));
 
         put_phone = true;
+
     }
 
     public void put_phone_empty(){
+        Log.d("put_phone", "1");
         bowl.setImageResource(R.drawable.bowl_of_rice_full);
         phone_destroyed.setImageResource(R.drawable.empty_phone);
 
