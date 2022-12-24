@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class destroy_phone extends AppCompatActivity {
 
@@ -26,6 +27,8 @@ public class destroy_phone extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_destroy_phone);
+
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         phone_to_destroy = findViewById(R.id.phone_to_destroy);
 

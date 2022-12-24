@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class winner extends AppCompatActivity {
 
     TextView game_completed;
@@ -20,6 +22,8 @@ public class winner extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner);
+
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         game_completed = findViewById(R.id.game_completed3);
 

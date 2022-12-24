@@ -7,89 +7,91 @@
     style="@style/app_main_theme"
     tools:context=".rice_bowl">
 
-    <TextView
-        android:id="@+id/game_completed2"
-        style="@style/app_main_text"
-        android:layout_width="130dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="40dp"
-        android:text=""
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_button" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView4"
-        style="@style/app_main_text"
-        android:layout_width="163dp"
-        android:layout_height="62dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/rice_bowl_text"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/game_completed2"
+            style="@style/app_main_text"
+            android:layout_width="130dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="12dp"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_button" />
 
-    <ImageView
-        android:id="@+id/bowl"
-        android:layout_width="229dp"
-        android:layout_height="206dp"
-        app:layout_constraintBottom_toTopOf="@+id/game_completed2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/put_phone_into_rice"
-        app:layout_constraintVertical_bias="0.125"
-        app:srcCompat="@drawable/bowl_of_rice" />
+        <Button
+            android:id="@+id/back_button"
+            style="@style/app_main_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="back"
+            android:text="@string/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/state" />
 
-    <ImageView
-        android:id="@+id/phone_destroyed"
-        android:layout_width="153dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/demo_phone_broken" />
+        <TextView
+            android:id="@+id/state"
+            style="@style/app_main_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bowl" />
 
-    <Button
-        android:id="@+id/back_button"
-        style="@style/app_main_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:onClick="back"
-        android:text="@string/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bowl" />
+        <Button
+            android:id="@+id/put_phone_into_rice"
+            style="@style/app_main_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:onClick="put_phone"
+            android:text="@string/put_phone_into_the_rice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_destroyed" />
 
-    <Button
-        android:id="@+id/put_phone_into_rice"
-        style="@style/app_main_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:onClick="put_phone"
-        android:text="@string/put_phone_into_the_rice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <ImageView
+            android:id="@+id/bowl"
+            android:layout_width="229dp"
+            android:layout_height="206dp"
+            android:layout_marginTop="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/put_phone_into_rice"
+            app:srcCompat="@drawable/bowl_of_rice" />
 
-    <TextView
-        android:id="@+id/state"
-        style="@style/app_main_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/back_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bowl"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/app_main_text"
+            android:layout_width="163dp"
+            android:layout_height="62dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/rice_bowl_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/phone_destroyed"
+            android:layout_width="153dp"
+            android:layout_height="139dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:srcCompat="@drawable/demo_phone_broken" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 public class rice_bowl extends AppCompatActivity {
 
@@ -59,6 +60,8 @@ public class rice_bowl extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rice_bowl);
+
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         phone_destroyed = findViewById(R.id.phone_destroyed);
         bowl = findViewById(R.id.bowl);
